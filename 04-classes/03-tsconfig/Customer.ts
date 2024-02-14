@@ -24,11 +24,10 @@ class Customer {
     }
 }
 
-// create instance
-let customer = new Customer("john", "doe");
-customer.firstName = "martin";
-customer.lastName = "dixon";
+let customer = new Customer("Martin", "Luther");
+
+customer.firstName = "susan";
+customer.lastName = "layla";
 
 console.log(customer.firstName);
 console.log(customer.lastName);
-console.log(customer)

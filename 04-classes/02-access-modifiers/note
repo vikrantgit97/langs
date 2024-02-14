@@ -1,0 +1,3 @@
+tsc --target ES5 --noEmitOnError Customer.ts
+
+terminal$ node Customer.js

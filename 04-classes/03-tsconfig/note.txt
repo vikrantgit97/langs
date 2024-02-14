@@ -1,0 +1,13 @@
+to generate tsconfig.json file
+terminal$ tsc --init
+
+add this option under compilerOptions
+
+ {
+  "compilerOptions": {
+    "target": "es5",
+    "module":"commonjs",
+    "noEmitOnError":true,
+    ...
+    }
+}

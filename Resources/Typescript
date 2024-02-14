@@ -1,1 +1,112 @@
-Typescript developed by microsoft in 2012 
+Typescript- 
+    developed by microsoft in 2012 
+    free & open source
+installation guide to run Typescript program
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/install-angular-tools/ms-windows/install-ms-windows.md
+
+ref: https://github.com/darbyluv2code/fullstack-angular-and-springboot/tree/master/source-code/typescript-training
+    Typescripts docs: www.typescriptlang.org
+
+provides static typing support to javaScript
+    it is strongly typed language
+    helps with IDE support:code completion and debugging
+Add supports for OOPs
+    classe, objects, inheritence, interfaces, etc...
+
+Typescript is superset of JavaScript &  ECMAScript
+
+web browser don't understand typescript nativaly
+    convert typescript code to javascript
+    this is known as transpiling
+    transpiling is accomplished with 'tsc' command
+    >>Terminal$ tsc Test.ts
+    generate javascript file
+    >>Terminal$ node Test.js         (use node command to run js file)
+
+DataTypes
+    boolean: true/false
+    number:  support integer & floating points numbers
+    string:  text data Enclosed in single or double quotes
+    any:      supports 'any' datatypes assignment
+
+let  variable: type = initial value
+let  found: boolean = true;
+let  grade: number = 56.6;
+let  subject: string  = marathi;
+
+let keyword for variable declaration opposed using traditional javascript var keyword
+    javascript var kayword had number of goatches & pitfalls
+        scooping, capturing, shadowing etc
+
+compile & run
+
+$file test.ts
+
+let  found: boolean = true;
+let  grade: number = 56.6;
+let  subject: string  = marathi;
+
+console.log(found);
+console.log("the grade is: "+grade);
+console.log(subject);
+
+>>Terminal$ tsc test.ts     (compile code using tsc)
+>>Terminal$ node test.js     (run code using node)
+
+>>Terminal$ tsc --noEmitOnError test.js     (Don't generate js file if compilation errors)
+
+Access modifiers 
+    public -it is an default modifier
+    protected 
+    private
+
+Assessors get/set 
+$file Customer.ts
+
+class Customer {
+    private _firstName: string;
+    private _lastName: string;
+
+    constructor(theFirst: string, theLast: string) {
+        this._firstName = theFirst;
+        this._lastName = theLast;
+    }
+
+    public get firstName(): string {
+        return this._firstName;
+    }
+
+    public set firstName(value: string) {
+        this._firstName = value;
+    }
+
+    public get lastName(): string {
+        return this._lastName;
+    }
+
+    public set lastName(value: string) {
+        this._lastName = value;
+    }
+}
+
+>>Terminal$ tsc --target ES5 --noEmitOnError Customer.js     (this feature is only support in ES5 & higher set the compiler flag to compile the code)
+
+tsconfig.json file defines compiler option & project settings
+place the file in root of your project directory
+    to set all compiler flags like below
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module":"commonjs",
+    "noEmitOnError":true,
+    ...
+    }
+}
+you can generate a template for this file
+>>Terminal$ tsc --init
+
+your project has tsconfig.json file then you can compile with tsc
+
+Parameter Properties 
+define property & assign property automatically with access mofifiers 
+after that accessor get/set 
